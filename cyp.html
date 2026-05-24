@@ -275,7 +275,64 @@
   </section>
   
   <!-- ══ TEMA 8 · PUNTO DE EQUILIBRIO ══ -->
-  <section id="t8" class="seccion">
+    <section id="t8" class="seccion activa">
+    <div class="encabezado-tema">
+      <span class="etiqueta-tema">Tema 8</span>
+      <h2>Punto de Equilibrio</h2>
+    </div>
+    <div class="fila-dos-columnas">
+      <div class="caja-info">
+        <h4>Definición</h4>
+        <p>El punto de equilibrio permite identificar el mínimo nivel de ventas necesario para cubrir los costos de operación. Fundamental para la planificación financiera.</p>
+      </div>
+      <div class="caja-info">
+        <h4>Fórmula</h4>
+        <ul>
+          <li>Bajo el PE → pérdida</li>
+          <li>En el PE → sin ganancia ni pérdida</li>
+          <li>Sobre el PE → ganancia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bloque-codigo">
+      <div class="etiqueta-lenguaje">JavaScript</div>
+      <pre><code>// Punto de Equilibrio
+        let CF  = recuperarDecimal('cf');   // Costos Fijos ej. 1000
+        let PV  = recuperarDecimal('pv');   // Precio de Venta ej. 20
+        let CVU = recuperarDecimal('cvu');  // Costo Variable Unitario ej. 10
+
+        let PE = CF / (PV - CVU);
+        mostrarTexto('resultado', "Punto Equilibrio: " + PE + " unidades");
+        // Resultado: Punto Equilibrio: 100 unidades</code></pre>
+    </div>
+    <div class="bloque-calculadora">
+      <h4>Calculadora Interactiva</h4>
+      <div class="grilla-campos">
+        <div class="campo"><label>Costos Fijos ($)</label><input type="number" id="pe_cf"  placeholder="1000" step="0.01" /></div>
+        <div class="campo"><label>Precio de Venta ($)</label><input type="number" id="pe_pv"  placeholder="20" step="0.01" /></div>
+        <div class="campo"><label>Costo Variable Unitario ($)</label><input type="number" id="pe_cvu" placeholder="10" step="0.01" /></div>
+      </div>
+      <button class="boton-calcular" onclick="calcularPuntoEquilibrio()">Calcular</button>
+      <div class="caja-resultado" id="res_pe"></div>
+    </div>
+    <div class="fila-dos-columnas">
+      <div class="caja-errores">
+        <h4>Errores Comunes</h4>
+        <ul>
+          <li>Usar el costo total en lugar del costo variable UNITARIO en la fórmula.</li>
+          <li>No actualizar el punto de equilibrio cuando cambian costos o precios.</li>
+          <li>Confundir punto de equilibrio en unidades con el punto de equilibrio en dinero.</li>
+        </ul>
+      </div>
+      <div class="caja-tips">
+        <h4>Tips</h4>
+        <ul>
+          <li><strong>PE en dinero:</strong> PE$ = Costos Fijos / (1 − Costo Variable / Precio Venta).</li>
+          <li><strong>Estrategia:</strong> Para bajar el PE: reduce costos fijos, sube precio o baja costo variable.</li>
+          <li><strong>Interpretación:</strong> Bajo el PE = pérdida. En el PE = cero ganancia. Sobre el PE = ganancia.</li>
+        </ul>
+      </div>
+    </div>
   </section>
   
   <!-- ───── RESPUESTA CALCULADORA NOTIFICATION ───── -->
@@ -295,7 +352,7 @@
     <div class="tarjeta-perfil">
       <div class="avatar-perfil">👨‍💻</div>
       <h3>Alexander Garofalo</h3>
-      <p class="subtitulo-perfil">Lógica y resolución de problemas matemáticos</p>
+      <p class="subtitulo-perfil"> / KRAKEDEV / Matemáticas 1 / </p>
       <p class="frase-perfil">"Me apasiona la tecnología y la informática."</p>
       <p class="descripcion-perfil">Desarrollador de la Guía Metodológica de Costos y Presupuestos.<br>Creado con HTML, CSS y JavaScript puro.</p>
       <div class="enlaces-perfil">

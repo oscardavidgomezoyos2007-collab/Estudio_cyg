@@ -124,5 +124,33 @@ function calcularMargenGanancia() {
    TEMA 8 — PUNTO DE EQUILIBRIO
    ───────────────────────────────────────────────────────────────── */
 function calcularPuntoEquilibrio() {
+  let costosFijos         = recuperarDecimal('pe_cf')  || 0;
+  let precioVentaUnitario = recuperarDecimal('pe_pv')  || 0;
+  let costoVariableUnit   = recuperarDecimal('pe_cvu') || 0;
 
+  let margenContribucion = precioVentaUnitario - costoVariableUnit;
+
+  if (margenContribucion <= 0) {
+    mostrarEmergente('El precio de venta debe ser mayor al costo variable unitario.', 'error');
+    return;
+  }
+  if (costosFijos <= 0) {
+    mostrarEmergente('Ingresa los costos fijos.', 'error');
+    return;
+  }
+
+  let puntoEquilibrioUnidades = costosFijos / margenContribucion;
+  let puntoEquilibrioDinero   = costosFijos / (1 - costoVariableUnit / precioVentaUnitario);
+
+  mostrarResultadoCalculadora('res_pe', [
+    'Costos Fijos:           $' + costosFijos.toFixed(2),
+    'Precio de Venta:        $' + precioVentaUnitario.toFixed(2),
+    'Costo Variable Unit.:   $' + costoVariableUnit.toFixed(2),
+    'Margen de Contribución: $' + margenContribucion.toFixed(2),
+    '━━━━━━━━━━━━━━━━━━━━',
+    'PE en Unidades: <strong>' + Math.ceil(puntoEquilibrioUnidades) + ' unidades</strong>',
+    'PE en Dinero:   <strong>$' + puntoEquilibrioDinero.toFixed(2) + '</strong>'
+  ]);
+
+  mostrarEmergente('Punto de Equilibrio: ' + Math.ceil(puntoEquilibrioUnidades) + ' unidades', 'exito');
 }
