@@ -114,7 +114,7 @@
   </section>
 
   <!-- ══ TEMA 4 · COSTOS MIXTOS ══ -->
-  <section id="t4" class="seccion">
+  <section id="t4" class="seccion activa">
     <div class="encabezado-tema">
       <span class="etiqueta-tema">Tema 4</span>
       <h2>Costos de Materia Prima</h2>
@@ -150,7 +150,7 @@
 
     <!-- Calculadora -->
     <div class="bloque-calculadora">
-      <h4>🧮 Calculadora Interactiva</h4>
+      <h4>Calculadora Interactiva</h4>
       <div class="grilla-campos">
         <div class="campo"><label>Ingrediente 1 ($)</label><input type="number" id="mp_i1" placeholder="2" step="0.01" /></div>
         <div class="campo"><label>Ingrediente 2 ($)</label><input type="number" id="mp_i2" placeholder="3" step="0.01" /></div>
@@ -187,7 +187,87 @@
   </section>
   
   <!-- ══ TEMA 6 · COSTEO DE RECETAS ══ -->
-  <section id="t6" class="seccion">
+   <section id="t6" class="seccion activa">
+    <div class="encabezado-tema">
+      <span class="etiqueta-tema">Tema 6</span>
+      <h2>Costeo de Recetas</h2>
+    </div>
+
+    <!-- Definición y características -->
+    <div class="fila-dos-columnas">
+      <div class="caja-info">
+        <h4>Definición</h4>
+        <p>El costeo de recetas permite calcular el costo total de los ingredientes de un alimento o bebida. Muy utilizado en restaurantes y cafeterías para fijar precios correctos.</p>
+      </div>
+      <div class="caja-info">
+        <h4>Elementos del Costeo</h4>
+        <ul>
+          <li>Ingredientes y sus cantidades.</li>
+          <li>Precio unitario de cada ingrediente.</li>
+          <li>Costo total por receta.</li>
+          <li>El margen de ganancia se agrega al costo para fijar el precio de venta.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bloque de código -->
+    <div class="bloque-codigo">
+      <div class="etiqueta-lenguaje">JavaScript</div>
+      <pre><code>// Costeo de Recetas
+        let ingrediente1 = { nombre: "Harina", costo: recuperarDecimal('i1') };
+        let ingrediente2 = { nombre: "Huevos", costo: recuperarDecimal('i2') };
+        let ingrediente3 = { nombre: "Azúcar", costo: recuperarDecimal('i3') };
+
+        let costoTotal = ingrediente1.costo + ingrediente2.costo + ingrediente3.costo;
+        mostrarTexto('resultado', "Costo Total Receta: $" + costoTotal.toFixed(2));
+        // Resultado: Costo Total Receta: $4.50</code></pre>
+    </div>
+
+    <!-- Calculadora -->
+    <div class="bloque-calculadora">
+      <h4>Calculadora de Receta</h4>
+      <div class="tabla-ingredientes">
+        <div class="fila-encabezado-tabla"><span>Ingrediente</span><span>Costo ($)</span></div>
+        <div class="fila-ingrediente">
+          <input type="text"   id="rec_n1" placeholder="Harina" />
+          <input type="number" id="rec_c1" placeholder="1.50" step="0.01" />
+        </div>
+        <div class="fila-ingrediente">
+          <input type="text"   id="rec_n2" placeholder="Huevos" />
+          <input type="number" id="rec_c2" placeholder="2.00" step="0.01" />
+        </div>
+        <div class="fila-ingrediente">
+          <input type="text"   id="rec_n3" placeholder="Azúcar" />
+          <input type="number" id="rec_c3" placeholder="1.00" step="0.01" />
+        </div>
+        <div class="fila-ingrediente">
+          <input type="text"   id="rec_n4" placeholder="Otro..." />
+          <input type="number" id="rec_c4" placeholder="0" step="0.01" />
+        </div>
+      </div>
+      <button class="boton-calcular" onclick="calcularReceta()">Calcular</button>
+      <div class="caja-resultado" id="res_rec"></div>
+    </div>
+
+     <!-- Errores y tips -->
+    <div class="fila-dos-columnas">
+      <div class="caja-errores">
+        <h4>Errores Comunes</h4>
+        <ul>
+          <li>No considerar el desperdicio o merma al calcular el costo.</li>
+          <li>Olvidar ingredientes secundarios (sal, condimentos, empaque).</li>
+          <li>No actualizar los precios de ingredientes cuando varían en el mercado.</li>
+        </ul>
+      </div>
+      <div class="caja-tips">
+        <h4>Tips</h4>
+        <ul>
+          <li><strong>Formato:</strong> Usa una tabla: Ingrediente │ Cantidad │ Precio unitario │ Costo parcial.</li>
+          <li><strong>Regla del costo objetivo:</strong> El costo no debe superar el 30–35% del precio de venta.</li>
+          <li><strong>Hack productivo:</strong> Pesa y mide con precisión — 10g extra × 100 platos es significativo.</li>
+        </ul>
+      </div>
+    </div>
   </section>
   
   <!-- ══ TEMA 7 · MARGEN DE GANANCIA ══ -->

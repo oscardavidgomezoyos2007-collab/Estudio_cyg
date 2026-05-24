@@ -85,7 +85,32 @@ function calcularManoObra() {
    TEMA 6 — COSTEO DE RECETAS
    ───────────────────────────────────────────────────────────────── */
 function calcularReceta() {
+  // Nombres de ingredientes con recuperarTexto()
+  let nombreIng1 = recuperarTexto('rec_n1') || 'Ingrediente 1';
+  let nombreIng2 = recuperarTexto('rec_n2') || 'Ingrediente 2';
+  let nombreIng3 = recuperarTexto('rec_n3') || 'Ingrediente 3';
+  let nombreIng4 = recuperarTexto('rec_n4') || 'Ingrediente 4';
 
+  // Costos de ingredientes con recuperarDecimal()
+  let costoIng1  = recuperarDecimal('rec_c1') || 0;
+  let costoIng2  = recuperarDecimal('rec_c2') || 0;
+  let costoIng3  = recuperarDecimal('rec_c3') || 0;
+  let costoIng4  = recuperarDecimal('rec_c4') || 0;
+
+  let costoTotalReceta  = costoIng1 + costoIng2 + costoIng3 + costoIng4;
+  let precioSugerido    = costoTotalReceta / 0.32; // Regla: costo = 32% del PVP
+
+  let lineas = [];
+  if (costoIng1 > 0) lineas.push(' ' + nombreIng1 + ':  $' + costoIng1.toFixed(2));
+  if (costoIng2 > 0) lineas.push(' ' + nombreIng2 + ':  $' + costoIng2.toFixed(2));
+  if (costoIng3 > 0) lineas.push(' ' + nombreIng3 + ':  $' + costoIng3.toFixed(2));
+  if (costoIng4 > 0) lineas.push(' ' + nombreIng4 + ':  $' + costoIng4.toFixed(2));
+  lineas.push('━━━━━━━━━━━━━━━━━━━━');
+  lineas.push('💰 Costo Total Receta:    <strong>$' + costoTotalReceta.toFixed(2) + '</strong>');
+  lineas.push('💡 Precio sugerido (32%): <strong>$' + precioSugerido.toFixed(2) + '</strong>');
+
+  mostrarResultadoCalculadora('res_rec', lineas);
+  mostrarEmergente('Costo de receta: $' + costoTotalReceta.toFixed(2), 'exito');
 }
 
 /* ─────────────────────────────────────────────────────────────────
