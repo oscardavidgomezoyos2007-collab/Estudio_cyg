@@ -34,6 +34,12 @@
 
   <!-- ══ TEMA 1 . COSTOS FIJOS ══ -->
   <section id="t1" class="seccion">
+  <h3>Costos Fijos</h3>
+  <input type="text" id="cf_alq" placeholder="Alquiler">
+  <input type="text" id="cf_serv" placeholder="Servicios">
+  <input type="text" id="cf_suel" placeholder="Sueldos">
+  <button onclick="calcularCostosFijos()">Calcular</button>
+  <div id="res_cf"></div>
   </section>
 
   <!-- ══ TEMA 2 · COSTOS VARIABLES (COMPLETO) ══ -->
@@ -116,6 +122,11 @@
 
   <!-- ══ TEMA 3 · COSTOS FIJOS ══ -->
   <section id="t3" class="seccion">
+  <h3>Costos Directos e Indirectos</h3>
+  <input type="text" id="ci_dir" placeholder="Costos Directos">
+  <input type="text" id="ci_ind" placeholder="Costos Indirectos">
+  <button onclick="calcularDirectosIndirectos()">Calcular</button>
+  <div id="res_ci"></div>
   </section>
 
   <!-- ══ TEMA 4 · COSTOS MIXTOS ══ -->
@@ -195,6 +206,11 @@
   
   <!-- ══ TEMA 5 · COSTOS MIXTOS ══ -->
   <section id="t5" class="seccion">
+  <h3>Mano de Obra</h3>
+  <input type="text" id="mo_horas" placeholder="Horas trabajadas">
+  <input type="text" id="mo_costo" placeholder="Costo por hora">
+  <button onclick="calcularManoObra()">Calcular</button>
+  <div id="res_mo"></div>
   </section>
   
   <!-- ══ TEMA 6 · COSTEO DE RECETAS ══ -->
@@ -288,8 +304,12 @@
   </section>
   
   <!-- ══ TEMA 7 · MARGEN DE GANANCIA ══ -->
-<section id="t7" class="seccion">
-
+  <section id="t7" class="seccion">
+  <h3>Margen de Ganancia</h3>
+  <input type="text" id="mg_costo" placeholder="Costo">
+  <input type="text" id="mg_precio" placeholder="Precio de venta">
+  <button onclick="calcularMargenGanancia()">Calcular</button>
+  <div id="res_mg"></div>
   <div class="encabezado-tema">
     <span class="etiqueta-tema">Tema 7</span>
     <h2>Margen de Ganancia</h2>

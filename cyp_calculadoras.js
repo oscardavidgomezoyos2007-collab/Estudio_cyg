@@ -14,7 +14,21 @@ function mostrarResultadoCalculadora(idCaja, lineas) {
    TEMA 1 — COSTOS FIJOS
    ───────────────────────────────────────────────────────────────── */
 function calcularCostosFijos() {
-  
+  let alquiler   = recuperarDecimal('cf_alq') || 0;
+  let servicios  = recuperarDecimal('cf_serv') || 0;
+  let sueldos    = recuperarDecimal('cf_suel') || 0;
+
+  let totalCostosFijos = alquiler + servicios + sueldos;
+
+  mostrarResultadoCalculadora('res_cf', [
+    'Alquiler:     $' + alquiler.toFixed(2),
+    'Servicios:    $' + servicios.toFixed(2),
+    'Sueldos:      $' + sueldos.toFixed(2),
+    '━━━━━━━━━━━━━━━━━━━━',
+    'Total Costos Fijos: <strong>$' + totalCostosFijos.toFixed(2) + '</strong>'
+  ]);
+
+  mostrarEmergente('Costos Fijos: $' + totalCostosFijos.toFixed(2), 'exito');
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -45,7 +59,19 @@ function calcularCostosVariables() {
    TEMA 3 — COSTOS DIRECTOS E INDIRECTOS
    ───────────────────────────────────────────────────────────────── */
 function calcularDirectosIndirectos() {
+  let directos   = recuperarDecimal('ci_dir') || 0;
+  let indirectos = recuperarDecimal('ci_ind') || 0;
 
+  let total = directos + indirectos;
+
+  mostrarResultadoCalculadora('res_ci', [
+    'Costos Directos:   $' + directos.toFixed(2),
+    'Costos Indirectos: $' + indirectos.toFixed(2),
+    '━━━━━━━━━━━━━━━━━━━━',
+    'Costo Total: <strong>$' + total.toFixed(2) + '</strong>'
+  ]);
+
+  mostrarEmergente('Costo Total: $' + total.toFixed(2), 'exito');
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -78,7 +104,24 @@ function calcularMateriaPrima() {
    TEMA 5 — MANO DE OBRA
    ───────────────────────────────────────────────────────────────── */
 function calcularManoObra() {
+  let horasTrabajadas = recuperarDecimal('mo_horas') || 0;
+  let costoHora       = recuperarDecimal('mo_costo') || 0;
 
+  if (horasTrabajadas <= 0 || costoHora <= 0) {
+    mostrarEmergente('Ingresa valores válidos.', 'error');
+    return;
+  }
+
+  let total = horasTrabajadas * costoHora;
+
+  mostrarResultadoCalculadora('res_mo', [
+    'Horas trabajadas: ' + horasTrabajadas,
+    'Costo por hora:   $' + costoHora.toFixed(2),
+    '━━━━━━━━━━━━━━━━━━━━',
+    'Costo Mano de Obra: <strong>$' + total.toFixed(2) + '</strong>'
+  ]);
+
+  mostrarEmergente('Mano de Obra: $' + total.toFixed(2), 'exito');
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -117,9 +160,32 @@ function calcularReceta() {
    TEMA 7 — MARGEN DE GANANCIA
    ───────────────────────────────────────────────────────────────── */
 function calcularMargenGanancia() {
+  let costo   = recuperarDecimal('mg_costo') || 0;
+  let precio  = recuperarDecimal('mg_precio') || 0;
 
+  if (costo <= 0 || precio <= 0) {
+    mostrarEmergente('Ingresa valores válidos.', 'error');
+    return;
+  }
+
+  if (precio <= costo) {
+    mostrarEmergente('El precio debe ser mayor al costo.', 'error');
+    return;
+  }
+
+  let ganancia = precio - costo;
+  let margen   = (ganancia / precio) * 100;
+
+  mostrarResultadoCalculadora('res_mg', [
+    'Costo:        $' + costo.toFixed(2),
+    'Precio:       $' + precio.toFixed(2),
+    'Ganancia:     $' + ganancia.toFixed(2),
+    '━━━━━━━━━━━━━━━━━━━━',
+    'Margen: <strong>' + margen.toFixed(2) + '%</strong>'
+  ]);
+
+  mostrarEmergente('Margen: ' + margen.toFixed(2) + '%', 'exito');
 }
-
 /* ─────────────────────────────────────────────────────────────────
    TEMA 8 — PUNTO DE EQUILIBRIO
    ───────────────────────────────────────────────────────────────── */
