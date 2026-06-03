@@ -52,54 +52,34 @@
         <h2>Costos Variables</h2>
       </div>
 
-      <div class="fila-dos-columnas">
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>🗒️ Definición</h4>
-            <p>Los costos variables cambian de acuerdo con la cantidad de productos elaborados o servicios ofrecidos. Son esenciales para calcular precios de venta, ganancias y niveles de producción rentables.</p>
+      <div class="caja-info">
+        <h4>🗒️ Definición</h4>
+        <p>Los costos variables cambian de acuerdo con la cantidad de productos elaborados o servicios ofrecidos. Son esenciales para calcular precios de venta, ganancias y niveles de producción rentables.</p>
+      </div>
+
+      <div class="caja-info">
+        <h4>⚙️ Características</h4>
+        <ul>
+          <li>Cambian según el volumen de producción.</li>
+          <li>Aumentan o disminuyen dependiendo de las ventas.</li>
+          <li>Son proporcionales a la actividad del negocio.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+        <div class="grilla-campos">
+          <div class="campo">
+            <label>Costo por unidad ($)</label>
+            <input type="number" id="cv_cvu" placeholder="3" step="0.01" />
           </div>
-          <div class="caja-errores">
-            <h4>❌ Errores Comunes</h4>
-            <ul>
-              <li>Confundir costos variables con costos fijos.</li>
-              <li>No actualizar el costo variable unitario cuando cambian los insumos.</li>
-              <li>Calcular el total sin incluir todos los materiales.</li>
-            </ul>
-          </div>
-          <div class="caja-tips">
-            <h4>💡 Tips</h4>
-            <ul>
-              <li><strong>Test rápido:</strong> ¿Este gasto aumenta si produzco más? Si SÍ → es costo variable.</li>
-              <li><strong>Fórmula directa:</strong> CV Total = Costo Unitario × Cantidad producida.</li>
-              <li><strong>Consejo:</strong> Negociar precios con proveedores reduce los costos variables directamente.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>⚙️ Características</h4>
-            <ul>
-              <li>Cambian según el volumen de producción.</li>
-              <li>Aumentan o disminuyen dependiendo de las ventas.</li>
-              <li>Son proporcionales a la actividad del negocio.</li>
-            </ul>
-          </div>
-          <div class="bloque-calculadora">
-            <h4>🧮 Calculadora Interactiva</h4>
-            <div class="grilla-campos">
-              <div class="campo">
-                <label>Costo por unidad ($)</label>
-                <input type="number" id="cv_cvu" placeholder="3" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>Cantidad producida</label>
-                <input type="number" id="cv_cant" placeholder="50" />
-              </div>
-            </div>
-            <button class="boton-calcular" onclick="calcularCostosVariables()">Calcular</button>
-            <div class="caja-resultado" id="res_cv"></div>
+          <div class="campo">
+            <label>Cantidad producida</label>
+            <input type="number" id="cv_cant" placeholder="50" />
           </div>
         </div>
+        <button class="boton-calcular" onclick="calcularCostosVariables()">Calcular</button>
+        <div class="caja-resultado" id="res_cv"></div>
       </div>
 
       <div class="bloque-codigo">
@@ -137,61 +117,41 @@
         <h2>Costos de Materia Prima</h2>
       </div>
 
-      <div class="fila-dos-columnas">
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>🗒️ Definición</h4>
-            <p>El control adecuado de la materia prima permite reducir desperdicios, mejorar la producción y obtener mayores ganancias dentro de una empresa.</p>
+      <div class="caja-info">
+        <h4>🗒️ Definición</h4>
+        <p>El control adecuado de la materia prima permite reducir desperdicios, mejorar la producción y obtener mayores ganancias dentro de una empresa.</p>
+      </div>
+
+      <div class="caja-info">
+        <h4>⚙️ Tipos</h4>
+        <ul>
+          <li><strong>Directa:</strong> ingredientes principales del producto.</li>
+          <li><strong>Indirecta:</strong> empaques, etiquetas, condimentos.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+        <div class="grilla-campos">
+          <div class="campo">
+            <label>Ingrediente 1 ($)</label>
+            <input type="number" id="mp_i1" placeholder="2" step="0.01" />
           </div>
-          <div class="caja-errores">
-            <h4>❌ Errores Comunes</h4>
-            <ul>
-              <li>No considerar las mermas o desperdicios en el costo de materia prima.</li>
-              <li>Omitir la materia prima indirecta (empaques) al calcular el costo de producción.</li>
-              <li>No actualizar los precios de insumos ante variaciones del mercado.</li>
-            </ul>
+          <div class="campo">
+            <label>Ingrediente 2 ($)</label>
+            <input type="number" id="mp_i2" placeholder="3" step="0.01" />
           </div>
-          <div class="caja-tips">
-            <h4>💡 Tips</h4>
-            <ul>
-              <li><strong>Factor de merma:</strong> Si la receta pide 100g y se desperdicia un 10%, el costo real es sobre 110g.</li>
-              <li><strong>Costeo exacto:</strong> Incluye TODOS los insumos: ingredientes, empaques y materiales indirectos.</li>
-              <li><strong>Consejo:</strong> Actualiza los costos cada vez que cambien los precios de proveedores.</li>
-            </ul>
+          <div class="campo">
+            <label>Ingrediente 3 ($)</label>
+            <input type="number" id="mp_i3" placeholder="1" step="0.01" />
           </div>
-        </div>
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>⚙️ Tipos</h4>
-            <ul>
-              <li><strong>Directa:</strong> ingredientes principales del producto.</li>
-              <li><strong>Indirecta:</strong> empaques, etiquetas, condimentos.</li>
-            </ul>
-          </div>
-          <div class="bloque-calculadora">
-            <h4>🧮 Calculadora Interactiva</h4>
-            <div class="grilla-campos">
-              <div class="campo">
-                <label>Ingrediente 1 ($)</label>
-                <input type="number" id="mp_i1" placeholder="2" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>Ingrediente 2 ($)</label>
-                <input type="number" id="mp_i2" placeholder="3" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>Ingrediente 3 ($)</label>
-                <input type="number" id="mp_i3" placeholder="1" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>% Merma (desperdicio)</label>
-                <input type="number" id="mp_merma" placeholder="10" />
-              </div>
-            </div>
-            <button class="boton-calcular" onclick="calcularMateriaPrima()">Calcular</button>
-            <div class="caja-resultado" id="res_mp"></div>
+          <div class="campo">
+            <label>% Merma (desperdicio)</label>
+            <input type="number" id="mp_merma" placeholder="10" />
           </div>
         </div>
+        <button class="boton-calcular" onclick="calcularMateriaPrima()">Calcular</button>
+        <div class="caja-resultado" id="res_mp"></div>
       </div>
 
       <div class="bloque-codigo">
@@ -230,64 +190,44 @@
         <h2>Costeo de Recetas</h2>
       </div>
 
-      <div class="fila-dos-columnas">
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>🗒️ Definición</h4>
-            <p>El costeo de recetas permite calcular el costo total de los ingredientes de un alimento o bebida. Muy utilizado en restaurantes y cafeterías para fijar precios correctos.</p>
+      <div class="caja-info">
+        <h4>🗒️ Definición</h4>
+        <p>El costeo de recetas permite calcular el costo total de los ingredientes de un alimento o bebida. Muy utilizado en restaurantes y cafeterías para fijar precios correctos.</p>
+      </div>
+
+      <div class="caja-info">
+        <h4>⚙️ Elementos del Costeo</h4>
+        <ul>
+          <li>Ingredientes y sus cantidades.</li>
+          <li>Precio unitario de cada ingrediente.</li>
+          <li>Costo total por receta.</li>
+          <li>El margen de ganancia se agrega al costo para fijar el precio de venta.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora interactiva</h4>
+        <div class="tabla-ingredientes">
+          <div class="fila-encabezado-tabla"><span>Ingrediente</span><span>Costo ($)</span></div>
+          <div class="fila-ingrediente">
+            <input type="text" id="rec_n1" placeholder="Harina" />
+            <input type="number" id="rec_c1" placeholder="1.50" step="0.01" />
           </div>
-          <div class="caja-errores">
-            <h4>❌ Errores Comunes</h4>
-            <ul>
-              <li>No considerar el desperdicio o merma al calcular el costo.</li>
-              <li>Olvidar ingredientes secundarios (sal, condimentos, empaque).</li>
-              <li>No actualizar los precios de ingredientes cuando varían en el mercado.</li>
-            </ul>
+          <div class="fila-ingrediente">
+            <input type="text" id="rec_n2" placeholder="Huevos" />
+            <input type="number" id="rec_c2" placeholder="2.00" step="0.01" />
           </div>
-          <div class="caja-tips">
-            <h4>💡 Tips</h4>
-            <ul>
-              <li><strong>Formato:</strong> Usa una tabla: Ingrediente │ Cantidad │ Precio unitario │ Costo parcial.</li>
-              <li><strong>Regla del costo objetivo:</strong> El costo no debe superar el 30–35% del precio de venta.</li>
-              <li><strong>Hack productivo:</strong> Pesa y mide con precisión — 10g extra × 100 platos es significativo.</li>
-            </ul>
+          <div class="fila-ingrediente">
+            <input type="text" id="rec_n3" placeholder="Azúcar" />
+            <input type="number" id="rec_c3" placeholder="1.00" step="0.01" />
           </div>
-        </div>
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>⚙️ Elementos del Costeo</h4>
-            <ul>
-              <li>Ingredientes y sus cantidades.</li>
-              <li>Precio unitario de cada ingrediente.</li>
-              <li>Costo total por receta.</li>
-              <li>El margen de ganancia se agrega al costo para fijar el precio de venta.</li>
-            </ul>
-          </div>
-          <div class="bloque-calculadora">
-            <h4>🧮 Calculadora interactiva</h4>
-            <div class="tabla-ingredientes">
-              <div class="fila-encabezado-tabla"><span>Ingrediente</span><span>Costo ($)</span></div>
-              <div class="fila-ingrediente">
-                <input type="text" id="rec_n1" placeholder="Harina" />
-                <input type="number" id="rec_c1" placeholder="1.50" step="0.01" />
-              </div>
-              <div class="fila-ingrediente">
-                <input type="text" id="rec_n2" placeholder="Huevos" />
-                <input type="number" id="rec_c2" placeholder="2.00" step="0.01" />
-              </div>
-              <div class="fila-ingrediente">
-                <input type="text" id="rec_n3" placeholder="Azúcar" />
-                <input type="number" id="rec_c3" placeholder="1.00" step="0.01" />
-              </div>
-              <div class="fila-ingrediente">
-                <input type="text" id="rec_n4" placeholder="Otro..." />
-                <input type="number" id="rec_c4" placeholder="0" step="0.01" />
-              </div>
-            </div>
-            <button class="boton-calcular" onclick="calcularReceta()">Calcular</button>
-            <div class="caja-resultado" id="res_rec"></div>
+          <div class="fila-ingrediente">
+            <input type="text" id="rec_n4" placeholder="Otro..." />
+            <input type="number" id="rec_c4" placeholder="0" step="0.01" />
           </div>
         </div>
+        <button class="boton-calcular" onclick="calcularReceta()">Calcular</button>
+        <div class="caja-resultado" id="res_rec"></div>
       </div>
 
       <div class="bloque-codigo">
@@ -341,58 +281,38 @@
         <h2>Punto de Equilibrio</h2>
       </div>
 
-      <div class="fila-dos-columnas">
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>🗒️ Definición</h4>
-            <p>El punto de equilibrio permite identificar el mínimo nivel de ventas necesario para cubrir los costos de operación. Fundamental para la planificación financiera.</p>
+      <div class="caja-info">
+        <h4>🗒️ Definición</h4>
+        <p>El punto de equilibrio permite identificar el mínimo nivel de ventas necesario para cubrir los costos de operación. Fundamental para la planificación financiera.</p>
+      </div>
+
+      <div class="caja-info">
+        <h4>⚙️ Fórmula</h4>
+        <ul>
+          <li>Bajo el PE → pérdida</li>
+          <li>En el PE → sin ganancia ni pérdida</li>
+          <li>Sobre el PE → ganancia</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+        <div class="grilla-campos">
+          <div class="campo">
+            <label>Costos Fijos ($)</label>
+            <input type="number" id="pe_cf" placeholder="1000" step="0.01" />
           </div>
-          <div class="caja-errores">
-            <h4>❌ Errores Comunes</h4>
-            <ul>
-              <li>Usar el costo total en lugar del costo variable UNITARIO en la fórmula.</li>
-              <li>No actualizar el punto de equilibrio cuando cambian costos o precios.</li>
-              <li>Confundir punto de equilibrio en unidades con el punto de equilibrio en dinero.</li>
-            </ul>
+          <div class="campo">
+            <label>Precio de Venta ($)</label>
+            <input type="number" id="pe_pv" placeholder="20" step="0.01" />
           </div>
-          <div class="caja-tips">
-            <h4>💡 Tips</h4>
-            <ul>
-              <li><strong>PE en dinero:</strong> PE$ = Costos Fijos / (1 − Costo Variable / Precio Venta).</li>
-              <li><strong>Estrategia:</strong> Para bajar el PE: reduce costos fijos, sube precio o baja costo variable.</li>
-              <li><strong>Interpretación:</strong> Bajo el PE = pérdida. En el PE = cero ganancia. Sobre el PE = ganancia.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="columna-contenido">
-          <div class="caja-info">
-            <h4>⚙️ Fórmula</h4>
-            <ul>
-              <li>Bajo el PE → pérdida</li>
-              <li>En el PE → sin ganancia ni pérdida</li>
-              <li>Sobre el PE → ganancia</li>
-            </ul>
-          </div>
-          <div class="bloque-calculadora">
-            <h4>🧮 Calculadora Interactiva</h4>
-            <div class="grilla-campos">
-              <div class="campo">
-                <label>Costos Fijos ($)</label>
-                <input type="number" id="pe_cf" placeholder="1000" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>Precio de Venta ($)</label>
-                <input type="number" id="pe_pv" placeholder="20" step="0.01" />
-              </div>
-              <div class="campo">
-                <label>Costo Variable Unitario ($)</label>
-                <input type="number" id="pe_cvu" placeholder="10" step="0.01" />
-              </div>
-            </div>
-            <button class="boton-calcular" onclick="calcularPuntoEquilibrio()">Calcular</button>
-            <div class="caja-resultado" id="res_pe"></div>
+          <div class="campo">
+            <label>Costo Variable Unitario ($)</label>
+            <input type="number" id="pe_cvu" placeholder="10" step="0.01" />
           </div>
         </div>
+        <button class="boton-calcular" onclick="calcularPuntoEquilibrio()">Calcular</button>
+        <div class="caja-resultado" id="res_pe"></div>
       </div>
 
       <div class="bloque-codigo">
