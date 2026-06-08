@@ -43,19 +43,14 @@ function mostrarToast(mensaje, tipo) {
    ───────────────────────────────────────────────────────────────── */
    
    function calcularCostosFijos() {
+    let alquiler = Number(document.getElementById("cf_alq").value) || 0;
+    let servicios = Number(document.getElementById("cf_serv").value) || 0;
+    let sueldos = Number(document.getElementById("cf_suel").value) || 0;
 
-  let alquiler = Number(document.getElementById("alquiler").value);
-  let internet = Number(document.getElementById("internet").value);
-  let seguro = Number(document.getElementById("seguro").value);
+    let total = alquiler + servicios + sueldos;
 
-  let total = alquiler + internet + seguro;
-
-  let resultado = document.getElementById("resultadoCF");
-
-  resultado.classList.add("visible");
-
-  resultado.innerHTML =
-    "<div class='linea'>Costo Fijo Total: $" + total.toFixed(2) + "</div>";
+    document.getElementById("res_cf").innerHTML =
+    "Total de Costos Fijos: $" + total.toFixed(2);
 }
 
 function calcularCostos() {
@@ -74,18 +69,13 @@ function calcularCostos() {
 }
 
 function calcularManoObra() {
+    let horas = Number(document.getElementById("horas").value) || 0;
+    let costo = Number(document.getElementById("costo").value) || 0;
 
-  let empleados = Number(document.getElementById("empleados").value);
-  let salario = Number(document.getElementById("salario").value);
+    let total = horas * costo;
 
-  let total = empleados * salario;
-
-  let resultado = document.getElementById("resultadoMO");
-
-  resultado.classList.add("visible");
-
-  resultado.innerHTML =
-    "<div class='linea'>Costo Mano de Obra: $" + total.toFixed(2) + "</div>";
+    document.getElementById("res_t5").innerHTML =
+    "Costo Total de Mano de Obra: $" + total.toFixed(2);
 }
 
 function calcularGanancia() {

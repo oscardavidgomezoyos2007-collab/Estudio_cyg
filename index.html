@@ -34,16 +34,103 @@
 
     <!-- ══ TEMA 1 · COSTOS FIJOS ══ -->
     <section id="t1" class="seccion">
-      <h3>Costos Fijos</h3>
-      <input type="text" id="cf_alq" placeholder="Alquiler">
-      <input type="text" id="cf_serv" placeholder="Servicios">
-      <input type="text" id="cf_suel" placeholder="Sueldos">
-      <button onclick="calcularCostosFijos()">Calcular</button>
-      <div id="res_cf"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
+  <div class="encabezado-tema">
+    <span class="etiqueta-tema">Tema 1</span>
+    <h2>Costos Fijos</h2>
+  </div>
+
+  <div class="fila-dos-columnas">
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>📝 Definición</h4>
+        <p>
+          Los costos fijos son aquellos gastos que permanecen constantes
+          independientemente de la cantidad de productos o servicios que
+          produzca una empresa.
+        </p>
+      </div>
+
+      <div class="caja-errores">
+        <h4>❌ Errores Comunes</h4>
+        <ul>
+          <li>Confundir costos fijos con variables.</li>
+          <li>No registrar todos los gastos mensuales.</li>
+          <li>Olvidar pagos administrativos.</li>
+        </ul>
+      </div>
+
+      <div class="caja-tips">
+        <h4>💡 Tips</h4>
+        <ul>
+          <li>Incluye alquiler, internet y seguros.</li>
+          <li>Registra los gastos cada mes.</li>
+          <li>Mantén actualizado tu presupuesto.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>⚙️ Características</h4>
+        <ul>
+          <li>No dependen de la producción.</li>
+          <li>Se mantienen constantes.</li>
+          <li>Son necesarios para el funcionamiento del negocio.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+
+        <div class="campo">
+          <label>Alquiler ($)</label>
+          <input type="number" id="cf_alq" placeholder="500">
+        </div>
+
+        <div class="campo">
+          <label>Servicios ($)</label>
+          <input type="number" id="cf_serv" placeholder="100">
+        </div>
+
+        <div class="campo">
+          <label>Sueldos ($)</label>
+          <input type="number" id="cf_suel" placeholder="800">
+        </div>
+
+        <button class="boton-calcular" onclick="calcularCostosFijos()">
+          Calcular
+        </button>
+
+        <div id="res_cf" class="resultado"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bloque-codigo">
+    <div class="etiqueta-lenguaje">📟 JavaScript</div>
+    <pre><code>
+// Costos Fijos
+
+let alquiler = 500;
+let servicios = 100;
+let sueldos = 800;
+
+let total = alquiler + servicios + sueldos;
+
+// Resultado: $1400
+    </code></pre>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Sección creada por: Oscar Gomez</p>
+  </footer>
+</section>
 
     <!-- ══ TEMA 2 · COSTOS VARIABLES ══ -->
     <section id="t2" class="seccion">
@@ -100,16 +187,98 @@
 
     <!-- ══ TEMA 3 · COSTOS DIRECTOS E INDIRECTOS ══ -->
     <section id="t3" class="seccion">
-      <h3>Costos Directos e Indirectos</h3>
-      <input type="text" id="ci_dir" placeholder="Costos Directos">
-      <input type="text" id="ci_ind" placeholder="Costos Indirectos">
-      <button onclick="calcularDirectosIndirectos()">Calcular</button>
-      <div id="res_ci"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
+  <div class="encabezado-tema">
+    <span class="etiqueta-tema">Tema 3</span>
+    <h2>Costos Directos e Indirectos</h2>
+  </div>
 
+  <div class="fila-dos-columnas">
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>📝 Definición</h4>
+        <p>
+          Los costos directos son aquellos que se pueden identificar
+          directamente con la elaboración de un producto. Los costos
+          indirectos son necesarios para la producción, pero no se
+          pueden asociar directamente a un producto específico.
+        </p>
+      </div>
+
+      <div class="caja-errores">
+        <h4>❌ Errores Comunes</h4>
+        <ul>
+          <li>Confundir costos directos con indirectos.</li>
+          <li>No registrar gastos de apoyo a la producción.</li>
+          <li>Clasificar incorrectamente los materiales.</li>
+        </ul>
+      </div>
+
+      <div class="caja-tips">
+        <h4>💡 Tips</h4>
+        <ul>
+          <li>Separa los costos por categorías.</li>
+          <li>Registra cada gasto de producción.</li>
+          <li>Mantén actualizado tu control de costos.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>⚙️ Ejemplos</h4>
+        <ul>
+          <li><strong>Directos:</strong> harina, queso, carne.</li>
+          <li><strong>Indirectos:</strong> electricidad, limpieza.</li>
+          <li>Ayudan a calcular el costo total del producto.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+
+        <div class="campo">
+          <label>Costo Directo ($)</label>
+          <input type="number" id="cd" placeholder="50">
+        </div>
+
+        <div class="campo">
+          <label>Costo Indirecto ($)</label>
+          <input type="number" id="ci" placeholder="20">
+        </div>
+
+        <button class="boton-calcular" onclick="calcularDirectosIndirectos()">
+          Calcular
+        </button>
+
+        <div id="res_t3" class="resultado"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bloque-codigo">
+    <div class="etiqueta-lenguaje">📟 JavaScript</div>
+    <pre><code>
+// Costos Directos e Indirectos
+
+let directos = 50;
+let indirectos = 20;
+
+let total = directos + indirectos;
+
+// Resultado: 70
+    </code></pre>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Sección creada por: Oscar Gomez</p>
+  </footer>
+</section>
     <!-- ══ TEMA 4 · MATERIA PRIMA ══ -->
     <section id="t4" class="seccion">
       <div class="encabezado-tema">
@@ -173,15 +342,97 @@
 
     <!-- ══ TEMA 5 · MANO DE OBRA ══ -->
     <section id="t5" class="seccion">
-      <h3>Mano de Obra</h3>
-      <input type="text" id="mo_horas" placeholder="Horas trabajadas">
-      <input type="text" id="mo_costo" placeholder="Costo por hora">
-      <button onclick="calcularManoObra()">Calcular</button>
-      <div id="res_mo"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
+  <div class="encabezado-tema">
+    <span class="etiqueta-tema">Tema 5</span>
+    <h2>Mano de Obra</h2>
+  </div>
+
+  <div class="fila-dos-columnas">
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>📝 Definición</h4>
+        <p>
+          La mano de obra representa el costo del trabajo realizado por los
+          empleados en la producción de bienes o servicios. Es un elemento
+          fundamental dentro de los costos de producción.
+        </p>
+      </div>
+
+      <div class="caja-errores">
+        <h4>❌ Errores Comunes</h4>
+        <ul>
+          <li>No registrar todas las horas trabajadas.</li>
+          <li>Calcular incorrectamente el costo por hora.</li>
+          <li>Olvidar beneficios y aportes laborales.</li>
+        </ul>
+      </div>
+
+      <div class="caja-tips">
+        <h4>💡 Tips</h4>
+        <ul>
+          <li>Lleva un control diario de horas.</li>
+          <li>Actualiza los salarios periódicamente.</li>
+          <li>Incluye horas extras cuando existan.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>⚙️ Características</h4>
+        <ul>
+          <li>Puede ser directa o indirecta.</li>
+          <li>Forma parte del costo de producción.</li>
+          <li>Influye en el precio final del producto.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+
+        <div class="campo">
+          <label>Horas Trabajadas</label>
+          <input type="number" id="horas" placeholder="40">
+        </div>
+
+        <div class="campo">
+          <label>Costo por Hora ($)</label>
+          <input type="number" id="costo" placeholder="5">
+        </div>
+
+        <button class="boton-calcular" onclick="calcularManoObra()">
+          Calcular
+        </button>
+
+        <div id="res_t5" class="resultado"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bloque-codigo">
+    <div class="etiqueta-lenguaje">📟 JavaScript</div>
+    <pre><code>
+// Mano de Obra
+
+let horas = 40;
+let costoHora = 5;
+
+let total = horas * costoHora;
+
+// Resultado: $200
+    </code></pre>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Sección creada por: Oscar Gomez</p>
+  </footer>
+</section>
 
     <!-- ══ TEMA 6 · COSTEO DE RECETAS ══ -->
     <section id="t6" class="seccion">
@@ -249,31 +500,100 @@
 
     <!-- ══ TEMA 7 · MARGEN DE GANANCIA ══ -->
     <section id="t7" class="seccion">
-      <h3>Margen de Ganancia</h3>
-      <input type="text" id="mg_costo" placeholder="Costo">
-      <input type="text" id="mg_precio" placeholder="Precio de venta">
-      <button onclick="calcularMargenGanancia()">Calcular</button>
+  <div class="encabezado-tema">
+    <span class="etiqueta-tema">Tema 7</span>
+    <h2>Margen de Ganancia</h2>
+  </div>
 
-      <div id="res_mg"></div>
-      <div class="fila-dos-columnas">
-        <div class="caja-info">
-          <h4>💰 Definición</h4>
-          <p>El margen de ganancia representa la utilidad obtenida por la empresa.</p>
-        </div>
-        <div class="caja-info">
-          <h4>📊 Fórmula</h4>
-          <ul>
-            <li>Ganancia = Precio - Costo</li>
-            <li>% = (Ganancia / Costo) × 100</li>
-          </ul>
-        </div>
+  <div class="fila-dos-columnas">
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>📝 Definición</h4>
+        <p>
+          El margen de ganancia es la diferencia entre el costo de un producto
+          y su precio de venta. Permite conocer cuánto beneficio obtiene una
+          empresa por cada venta realizada.
+        </p>
       </div>
 
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
+      <div class="caja-errores">
+        <h4>❌ Errores Comunes</h4>
+        <ul>
+          <li>No incluir todos los costos de producción.</li>
+          <li>Confundir ingresos con ganancias.</li>
+          <li>Calcular incorrectamente el porcentaje de ganancia.</li>
+        </ul>
+      </div>
 
+      <div class="caja-tips">
+        <h4>💡 Tips</h4>
+        <ul>
+          <li>Revisa periódicamente los costos.</li>
+          <li>Establece precios competitivos.</li>
+          <li>Analiza la rentabilidad de cada producto.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="columna-contenido">
+
+      <div class="caja-info">
+        <h4>⚙️ Fórmulas</h4>
+        <ul>
+          <li>Ganancia = Precio de Venta − Costo</li>
+          <li>Margen (%) = (Ganancia ÷ Costo) × 100</li>
+          <li>Ayuda a medir la rentabilidad.</li>
+        </ul>
+      </div>
+
+      <div class="bloque-calculadora">
+        <h4>🧮 Calculadora Interactiva</h4>
+
+        <div class="campo">
+          <label>Costo del Producto ($)</label>
+          <input type="number" id="mg_costo" placeholder="50">
+        </div>
+
+        <div class="campo">
+          <label>Precio de Venta ($)</label>
+          <input type="number" id="mg_precio" placeholder="80">
+        </div>
+
+        <button class="boton-calcular" onclick="calcularMargenGanancia()">
+          Calcular
+        </button>
+
+        <div id="res_t7" class="resultado"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bloque-codigo">
+    <div class="etiqueta-lenguaje">📟 JavaScript</div>
+    <pre><code>
+// Margen de Ganancia
+
+let costo = 50;
+let precioVenta = 80;
+
+let ganancia = precioVenta - costo;
+let margen = (ganancia / costo) * 100;
+
+// Resultado:
+// Ganancia = $30
+// Margen = 60%
+    </code></pre>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Sección creada por: Oscar Gomez</p>
+  </footer>
+</section>
     <!-- ══ TEMA 8 · PUNTO DE EQUILIBRIO ══ -->
     <section id="t8" class="seccion activa">
       <div class="encabezado-tema">
