@@ -1,469 +1,756 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G.M. — C.y P.</title>
-  <link rel="stylesheet" href="cyp.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Metodológica - Costos y Presupuestos</title>
+  <link rel="stylesheet" href="cyp.css">
 </head>
 <body>
 
-  <!-- ───── ENCABEZADO ───── -->
-  <header class="encabezado-sitio">
-    <h1>📖 GUIA METODOLOGICA 📖</h1>
-    <h2>COSTOS Y PRESUPUESTOS</h2>
-    <p>🖥️ Oscar Gomez - Alexander Garofalo 🖥️</p>
-  </header>
+<header>
+  <h1>📖 GUIA METODOLOGICA 📖</h1>
+  <h2>COSTOS Y PRESUPUESTOS</h2>
+  <p>🖥️ Oscar Gomez — Alexander Garofalo 🖥️</p>
+</header>
 
-  <!-- ───── BARRA DE PESTAÑAS ───── -->
-  <nav class="barra-navegacion" id="barraTabs">
-    <button class="boton-tab" data-seccion="t1" onclick="cambiarSeccion('t1', this)">T1 · Costos Fijos</button>
-    <button class="boton-tab" data-seccion="t2" onclick="cambiarSeccion('t2', this)">T2 · Costos Variables</button>
-    <button class="boton-tab" data-seccion="t3" onclick="cambiarSeccion('t3', this)">T3 · Directos e Indirectos</button>
-    <button class="boton-tab" data-seccion="t4" onclick="cambiarSeccion('t4', this)">T4 · Materia Prima</button>
-    <button class="boton-tab" data-seccion="t5" onclick="cambiarSeccion('t5', this)">T5 · Mano de Obra</button>
-    <button class="boton-tab" data-seccion="t6" onclick="cambiarSeccion('t6', this)">T6 · Costeo de Recetas</button>
-    <button class="boton-tab" data-seccion="t7" onclick="cambiarSeccion('t7', this)">T7 · Margen de Ganancia</button>
-    <button class="boton-tab" data-seccion="t8" onclick="cambiarSeccion('t8', this)">T8 · Punto de Equilibrio</button>
-    <button class="boton-tab boton-evaluacion" data-seccion="evaluacion" onclick="cambiarSeccion('evaluacion', this)">📝 Evaluación</button>
-    <button class="boton-tab boton-info" data-seccion="acerca-de" onclick="cambiarSeccion('acerca-de', this)">ℹ️ Acerca de</button>
-  </nav>
+<nav>
+  <button onclick="cambiarSeccion('t1', this)">📊 T1 Costos Fijos</button>
+  <button onclick="cambiarSeccion('t2', this)">📈 T2 Costos Variables</button>
+  <button onclick="cambiarSeccion('t3', this)">🔗 T3 Directos e Indirectos</button>
+  <button onclick="cambiarSeccion('t4', this)">🧺 T4 Materia Prima</button>
+  <button onclick="cambiarSeccion('t5', this)">👷 T5 Mano de Obra</button>
+  <button onclick="cambiarSeccion('t6', this)">🍳 T6 Costeo de Recetas</button>
+  <button onclick="cambiarSeccion('t7', this)">💰 T7 Margen de Ganancia</button>
+  <button onclick="cambiarSeccion('t8', this)">⚖ T8 Punto de Equilibrio</button>
+  <button onclick="cambiarSeccion('simulador', this)">🎯 Simulador</button>
+  <button onclick="cambiarSeccion('evaluacion', this)">📝 Evaluación</button>
+  <button onclick="cambiarSeccion('acerca-de', this)">ℹ Acerca de</button>
+</nav>
 
-  <!-- ───── CONTENIDO PRINCIPAL ───── -->
-  <main class="contenedor-principal">
+<main>
 
-    <!-- ══ TEMA 1 · COSTOS FIJOS ══ -->
-    <section id="t1" class="seccion">
-      <h3>Costos Fijos</h3>
-      <input type="text" id="cf_alq" placeholder="Alquiler">
-      <input type="text" id="cf_serv" placeholder="Servicios">
-      <input type="text" id="cf_suel" placeholder="Sueldos">
-      <button onclick="calcularCostosFijos()">Calcular</button>
-      <div id="res_cf"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
+<!-- ═══ T1 · COSTOS FIJOS ═══ -->
+<section id="t1" class="activa">
+  <h2>Tema 1 · Costos Fijos</h2>
 
-    <!-- ══ TEMA 2 · COSTOS VARIABLES ══ -->
-    <section id="t2" class="seccion">
-      <div class="encabezado-tema">
-        <span class="etiqueta-tema">Tema 2</span>
-        <h2>Costos Variables</h2>
-      </div>
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>Los costos fijos representan los gastos permanentes que una empresa debe cubrir para operar. Su correcto control permite mantener estabilidad financiera y planificar adecuadamente los ingresos necesarios para sostener el negocio.</p>
+  </div>
 
-      <div class="caja-info">
-        <h4>🗒️ Definición</h4>
-        <p>Los costos variables cambian de acuerdo con la cantidad de productos elaborados o servicios ofrecidos. Son esenciales para calcular precios de venta, ganancias y niveles de producción rentables.</p>
-      </div>
+  <div class="info-card">
+    <h4>📊 Características</h4>
+    <ul>
+      <li>No cambian a corto plazo.</li>
+      <li>Se mantienen estables aunque aumente o disminuya la producción.</li>
+      <li>Son permanentes durante un período determinado.</li>
+    </ul>
+  </div>
 
-      <div class="caja-info">
-        <h4>⚙️ Características</h4>
-        <ul>
-          <li>Cambian según el volumen de producción.</li>
-          <li>Aumentan o disminuyen dependiendo de las ventas.</li>
-          <li>Son proporcionales a la actividad del negocio.</li>
-        </ul>
-      </div>
-
-      <div class="bloque-calculadora">
-        <h4>🧮 Calculadora Interactiva</h4>
-        <div class="grilla-campos">
-          <div class="campo">
-            <label>Costo por unidad ($)</label>
-            <input type="number" id="cv_cvu" placeholder="3" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>Cantidad producida</label>
-            <input type="number" id="cv_cant" placeholder="50" />
-          </div>
-        </div>
-        <button class="boton-calcular" onclick="calcularCostosVariables()">Calcular</button>
-        <div class="caja-resultado" id="res_cv"></div>
-      </div>
-
-      <div class="bloque-codigo">
-        <div class="etiqueta-lenguaje">📟 JavaScript</div>
-        <pre><code>// Plantilla: Costos Variables
-          let costoPorUnidad = recuperarDecimal('cvu');     // ej. 3
-          let cantidad       = recuperarEntero('cantidad'); // ej. 50
-
-          let totalCV = costoPorUnidad * cantidad;
-          mostrarTexto('resultado', "Costo Variable: $" + totalCV);
-          // Resultado: Costo Variable: $150</code></pre>
-      </div>
-
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Alexander Garofalo</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 3 · COSTOS DIRECTOS E INDIRECTOS ══ -->
-    <section id="t3" class="seccion">
-      <h3>Costos Directos e Indirectos</h3>
-      <input type="text" id="ci_dir" placeholder="Costos Directos">
-      <input type="text" id="ci_ind" placeholder="Costos Indirectos">
-      <button onclick="calcularDirectosIndirectos()">Calcular</button>
-      <div id="res_ci"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 4 · MATERIA PRIMA ══ -->
-    <section id="t4" class="seccion">
-      <div class="encabezado-tema">
-        <span class="etiqueta-tema">Tema 4</span>
-        <h2>Costos de Materia Prima</h2>
-      </div>
-
-      <div class="caja-info">
-        <h4>🗒️ Definición</h4>
-        <p>El control adecuado de la materia prima permite reducir desperdicios, mejorar la producción y obtener mayores ganancias dentro de una empresa.</p>
-      </div>
-
-      <div class="caja-info">
-        <h4>⚙️ Tipos</h4>
-        <ul>
-          <li><strong>Directa:</strong> ingredientes principales del producto.</li>
-          <li><strong>Indirecta:</strong> empaques, etiquetas, condimentos.</li>
-        </ul>
-      </div>
-
-      <div class="bloque-calculadora">
-        <h4>🧮 Calculadora Interactiva</h4>
-        <div class="grilla-campos">
-          <div class="campo">
-            <label>Ingrediente 1 ($)</label>
-            <input type="number" id="mp_i1" placeholder="2" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>Ingrediente 2 ($)</label>
-            <input type="number" id="mp_i2" placeholder="3" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>Ingrediente 3 ($)</label>
-            <input type="number" id="mp_i3" placeholder="1" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>% Merma (desperdicio)</label>
-            <input type="number" id="mp_merma" placeholder="10" />
-          </div>
-        </div>
-        <button class="boton-calcular" onclick="calcularMateriaPrima()">Calcular</button>
-        <div class="caja-resultado" id="res_mp"></div>
-      </div>
-
-      <div class="bloque-codigo">
-        <div class="etiqueta-lenguaje">📟 JavaScript</div>
-        <pre><code>// Plantilla: Materia Prima
-            let harina = recuperarDecimal('harina'); // ej. 2
-            let huevos = recuperarDecimal('huevos'); // ej. 3
-            let azucar = recuperarDecimal('azucar'); // ej. 1
-
-            let totalMP = harina + huevos + azucar;
-            mostrarTexto('resultado', "Costo Materia Prima: $" + totalMP);
-            // Resultado: Costo Materia Prima: $6</code></pre>
-      </div>
-
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Alexander Garofalo</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 5 · MANO DE OBRA ══ -->
-    <section id="t5" class="seccion">
-      <h3>Mano de Obra</h3>
-      <input type="text" id="mo_horas" placeholder="Horas trabajadas">
-      <input type="text" id="mo_costo" placeholder="Costo por hora">
-      <button onclick="calcularManoObra()">Calcular</button>
-      <div id="res_mo"></div>
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 6 · COSTEO DE RECETAS ══ -->
-    <section id="t6" class="seccion">
-      <div class="encabezado-tema">
-        <span class="etiqueta-tema">Tema 6</span>
-        <h2>Costeo de Recetas</h2>
-      </div>
-
-      <div class="caja-info">
-        <h4>🗒️ Definición</h4>
-        <p>El costeo de recetas permite calcular el costo total de los ingredientes de un alimento o bebida. Muy utilizado en restaurantes y cafeterías para fijar precios correctos.</p>
-      </div>
-
-      <div class="caja-info">
-        <h4>⚙️ Elementos del Costeo</h4>
-        <ul>
-          <li>Ingredientes y sus cantidades.</li>
-          <li>Precio unitario de cada ingrediente.</li>
-          <li>Costo total por receta.</li>
-          <li>El margen de ganancia se agrega al costo para fijar el precio de venta.</li>
-        </ul>
-      </div>
-
-      <div class="bloque-calculadora">
-        <h4>🧮 Calculadora interactiva</h4>
-        <div class="tabla-ingredientes">
-          <div class="fila-encabezado-tabla"><span>Ingrediente</span><span>Costo ($)</span></div>
-          <div class="fila-ingrediente">
-            <input type="text" id="rec_n1" placeholder="Harina" />
-            <input type="number" id="rec_c1" placeholder="1.50" step="0.01" />
-          </div>
-          <div class="fila-ingrediente">
-            <input type="text" id="rec_n2" placeholder="Huevos" />
-            <input type="number" id="rec_c2" placeholder="2.00" step="0.01" />
-          </div>
-          <div class="fila-ingrediente">
-            <input type="text" id="rec_n3" placeholder="Azúcar" />
-            <input type="number" id="rec_c3" placeholder="1.00" step="0.01" />
-          </div>
-          <div class="fila-ingrediente">
-            <input type="text" id="rec_n4" placeholder="Otro..." />
-            <input type="number" id="rec_c4" placeholder="0" step="0.01" />
-          </div>
-        </div>
-        <button class="boton-calcular" onclick="calcularReceta()">Calcular</button>
-        <div class="caja-resultado" id="res_rec"></div>
-      </div>
-
-      <div class="bloque-codigo">
-        <div class="etiqueta-lenguaje">📟 JavaScript</div>
-        <pre><code>// Costeo de Recetas
-          let ingrediente1 = { nombre: "Harina", costo: recuperarDecimal('i1') };
-          let ingrediente2 = { nombre: "Huevos", costo: recuperarDecimal('i2') };
-          let ingrediente3 = { nombre: "Azúcar", costo: recuperarDecimal('i3') };
-
-          let costoTotal = ingrediente1.costo + ingrediente2.costo + ingrediente3.costo;
-          mostrarTexto('resultado', "Costo Total Receta: $" + costoTotal.toFixed(2));
-          // Resultado: Costo Total Receta: $4.50</code></pre>
-      </div>
-
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Alexander Garofalo</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 7 · MARGEN DE GANANCIA ══ -->
-    <section id="t7" class="seccion">
-      <h3>Margen de Ganancia</h3>
-      <input type="text" id="mg_costo" placeholder="Costo">
-      <input type="text" id="mg_precio" placeholder="Precio de venta">
-      <button onclick="calcularMargenGanancia()">Calcular</button>
-
-      <div id="res_mg"></div>
-      <div class="fila-dos-columnas">
-        <div class="caja-info">
-          <h4>💰 Definición</h4>
-          <p>El margen de ganancia representa la utilidad obtenida por la empresa.</p>
-        </div>
-        <div class="caja-info">
-          <h4>📊 Fórmula</h4>
-          <ul>
-            <li>Ganancia = Precio - Costo</li>
-            <li>% = (Ganancia / Costo) × 100</li>
-          </ul>
-        </div>
-      </div>
-
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Oscar Gomez</p>
-      </footer>
-    </section>
-
-    <!-- ══ TEMA 8 · PUNTO DE EQUILIBRIO ══ -->
-    <section id="t8" class="seccion activa">
-      <div class="encabezado-tema">
-        <span class="etiqueta-tema">Tema 8</span>
-        <h2>Punto de Equilibrio</h2>
-      </div>
-
-      <div class="caja-info">
-        <h4>🗒️ Definición</h4>
-        <p>El punto de equilibrio permite identificar el mínimo nivel de ventas necesario para cubrir los costos de operación. Fundamental para la planificación financiera.</p>
-      </div>
-
-      <div class="caja-info">
-        <h4>⚙️ Fórmula</h4>
-        <ul>
-          <li>Bajo el PE → pérdida</li>
-          <li>En el PE → sin ganancia ni pérdida</li>
-          <li>Sobre el PE → ganancia</li>
-        </ul>
-      </div>
-
-      <div class="bloque-calculadora">
-        <h4>🧮 Calculadora Interactiva</h4>
-        <div class="grilla-campos">
-          <div class="campo">
-            <label>Costos Fijos ($)</label>
-            <input type="number" id="pe_cf" placeholder="1000" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>Precio de Venta ($)</label>
-            <input type="number" id="pe_pv" placeholder="20" step="0.01" />
-          </div>
-          <div class="campo">
-            <label>Costo Variable Unitario ($)</label>
-            <input type="number" id="pe_cvu" placeholder="10" step="0.01" />
-          </div>
-        </div>
-        <button class="boton-calcular" onclick="calcularPuntoEquilibrio()">Calcular</button>
-        <div class="caja-resultado" id="res_pe"></div>
-      </div>
-
-      <div class="bloque-codigo">
-        <div class="etiqueta-lenguaje">📟 JavaScript</div>
-        <pre><code>// Punto de Equilibrio
-          let CF  = recuperarDecimal('cf');   // Costos Fijos ej. 1000
-          let PV  = recuperarDecimal('pv');   // Precio de Venta ej. 20
-          let CVU = recuperarDecimal('cvu');  // Costo Variable Unitario ej. 10
-
-          let PE = CF / (PV - CVU);
-          mostrarTexto('resultado', "Punto Equilibrio: " + PE + " unidades");
-          // Resultado: Punto Equilibrio: 100 unidades</code></pre>
-      </div>
-
-      <footer class="pie-pagina">
-        <p>Seccion creada por: Alexander Garofalo</p>
-      </footer>
-    </section>
-
-    <!-- ───── NOTIFICACIÓN ───── -->
-    <div id="notificacion" class="notificacion" role="alert"></div>
-
-    <!-- ══ EVALUACIÓN ══ -->
-    <section id="evaluacion" class="seccion">
-      <div class="encabezado-tema">
-        <span class="etiqueta-tema">Evaluación Final</span>
-        <h2>Test de Conocimientos</h2>
-      </div>
-      <div class="intro-evaluacion">
-        <p>Responde las 5 preguntas de opción múltiple. Al finalizar recibirás tu calificación con retroalimentación.</p>
-      </div>
-      <div id="formulario-quiz" class="quiz">
-
-        <!-- P1 -->
-        <div class="tarjeta-pregunta" data-q="1">
-          <div class="num-pregunta">01</div>
-          <p class="texto-pregunta">Una empresa paga $500 de arriendo, $80 de internet y $120 de seguro sin importar cuánto produzca. ¿A cuánto ascienden sus costos fijos mensuales?</p>
-          <div class="opciones">
-            <label class="opt"><input type="radio" name="q1" value="a" /><span>$580</span></label>
-            <label class="opt"><input type="radio" name="q1" value="b" /><span>$620</span></label>
-            <label class="opt"><input type="radio" name="q1" value="c" data-correct="true" /><span>$700</span></label>
-            <label class="opt"><input type="radio" name="q1" value="d" /><span>$800</span></label>
-          </div>
-          <div class="explicacion" id="exp1" hidden>✅ Correcto: 500 + 80 + 120 = <strong>$700</strong> de costos fijos.</div>
-        </div>
-
-        <!-- P2 -->
-        <div class="tarjeta-pregunta" data-q="2">
-          <div class="num-pregunta">02</div>
-          <p class="texto-pregunta">El precio de venta de un producto es $25 y su costo de producción es $10. ¿Cuál es el porcentaje de ganancia sobre el costo?</p>
-          <div class="opciones">
-            <label class="opt"><input type="radio" name="q2" value="a" /><span>40%</span></label>
-            <label class="opt"><input type="radio" name="q2" value="b" data-correct="true" /><span>150%</span></label>
-            <label class="opt"><input type="radio" name="q2" value="c" /><span>60%</span></label>
-            <label class="opt"><input type="radio" name="q2" value="d" /><span>250%</span></label>
-          </div>
-          <div class="explicacion" id="exp2" hidden>✅ Ganancia = $15. % Ganancia = (15/10) × 100 = <strong>150%</strong>.</div>
-        </div>
-
-        <!-- P3 -->
-        <div class="tarjeta-pregunta" data-q="3">
-          <div class="num-pregunta">03</div>
-          <p class="texto-pregunta">Una pizzería tiene un costo variable por pizza de $3 y produce 50 pizzas. ¿Cuál es el costo variable total?</p>
-          <div class="opciones">
-            <label class="opt"><input type="radio" name="q3" value="a" /><span>$100</span></label>
-            <label class="opt"><input type="radio" name="q3" value="b" /><span>$120</span></label>
-            <label class="opt"><input type="radio" name="q3" value="c" data-correct="true" /><span>$150</span></label>
-            <label class="opt"><input type="radio" name="q3" value="d" /><span>$180</span></label>
-          </div>
-          <div class="explicacion" id="exp3" hidden>✅ Costo Variable Total = 3 × 50 = <strong>$150</strong>.</div>
-        </div>
-
-        <!-- P4 -->
-        <div class="tarjeta-pregunta" data-q="4">
-          <div class="num-pregunta">04</div>
-          <p class="texto-pregunta">Un chef recibe un salario mensual de $600 y trabaja 160 horas al mes. ¿Cuál es el costo por hora de su mano de obra?</p>
-          <div class="opciones">
-            <label class="opt"><input type="radio" name="q4" value="a" /><span>$3.00</span></label>
-            <label class="opt"><input type="radio" name="q4" value="b" data-correct="true" /><span>$3.75</span></label>
-            <label class="opt"><input type="radio" name="q4" value="c" /><span>$4.00</span></label>
-            <label class="opt"><input type="radio" name="q4" value="d" /><span>$5.00</span></label>
-          </div>
-          <div class="explicacion" id="exp4" hidden>✅ Costo por hora = 600 / 160 = <strong>$3.75</strong>.</div>
-        </div>
-
-        <!-- P5 -->
-        <div class="tarjeta-pregunta" data-q="5">
-          <div class="num-pregunta">05</div>
-          <p class="texto-pregunta">Una empresa tiene costos fijos de $2000, precio de venta $40 y costo variable unitario $20. ¿Cuántas unidades debe vender para llegar al punto de equilibrio?</p>
-          <div class="opciones">
-            <label class="opt"><input type="radio" name="q5" value="a" /><span>50 unidades</span></label>
-            <label class="opt"><input type="radio" name="q5" value="b" /><span>80 unidades</span></label>
-            <label class="opt"><input type="radio" name="q5" value="c" data-correct="true" /><span>100 unidades</span></label>
-            <label class="opt"><input type="radio" name="q5" value="d" /><span>200 unidades</span></label>
-          </div>
-          <div class="explicacion" id="exp5" hidden>✅ PE = 2000 / (40 − 20) = 2000 / 20 = <strong>100 unidades</strong>.</div>
-        </div>
-
-        <div class="acciones-quiz">
-          <button type="button" id="btn-evaluar" class="btn-enviar" onclick="evaluarQuiz()">Evaluar mis respuestas</button>
-          <button type="button" id="btn-reiniciar" class="btn-reiniciar" onclick="reiniciarQuiz()">🔄 Reiniciar</button>
-        </div>
-        <div id="resultado-quiz" class="resultado-quiz" hidden></div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══ ACERCA DE — AMBOS PERFILES ══ -->
-  <section id="acerca-de" class="seccion">
-    <div class="encabezado-tema">
-      <span class="etiqueta-tema">Información</span>
-      <h2>Acerca de</h2>
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Alquiler ($)</h5><input type="number" id="cf_alq" placeholder="800" step="0.01"></div>
+      <div class="campo"><h5>Servicios ($)</h5><input type="number" id="cf_serv" placeholder="50" step="0.01"></div>
+      <div class="campo"><h5>Sueldos ($)</h5><input type="number" id="cf_suel" placeholder="100" step="0.01"></div>
     </div>
-    <div class="acerca-grid">
-      <div class="tarjeta-perfil">
-        <div class="avatar-perfil">🐧</div>
-        <h3>Alexander Garofalo</h3>
-        <p class="subtitulo-perfil">/ KRAKEDEV / Matemáticas 1 /</p>
-        <p class="frase-perfil">"Me apasiona la tecnología y la informática."</p>
-        <p class="descripcion-perfil">Desarrollador de la Guía Metodológica de Costos y Presupuestos.<br>Creado con HTML, CSS y JavaScript puro.</p>
-        <div class="enlaces-perfil">
-          <a href="mailto:alexander.garofalo.ag@gmail.com">📧 alexander.garofalo.ag@gmail.com</a>
-          <a href="#">💼 Futuro Desarrollador de Software</a>
-          <a href="#">🐙 GitHub: @Norfolllk</a>
-        </div>
-      </div>
-	  
-      <div class="tarjeta-perfil">
-        <div class="avatar-perfil">🐢</div>
-        <h3>Oscar Gomez</h3>
-        <p class="subtitulo-perfil">/ KRAKEDEV / Matemáticas 1 /</p>
-        <p class="frase-perfil">"---"</p>
-        <p class="descripcion-perfil">D----.<br>----</p>
-        <div class="enlaces-perfil">
-          <a href="mailto:">--</a>
-          <a href="#">💼 Futuro ----</a>
-          <a href="#">🐙 GitHub: --</a>
-        </div>
+    <div class="botonera">
+      <button onclick="calcularCostosFijos()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t1')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_cf"></div>
+  </div>
+
+    <div class="codigo-box">
+      <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let alquiler = 800, internet = 50, seguro = 100;
+let totalCF = alquiler + internet + seguro;
+// Resultado: Costos Fijos: $950</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Oscar Gomez</p></footer>
+</section>
+
+<!-- ═══ T2 · COSTOS VARIABLES ═══ -->
+<section id="t2">
+  <h2>Tema 2 · Costos Variables</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>Los costos variables cambian de acuerdo con la cantidad de productos elaborados o servicios ofrecidos. Son esenciales para calcular precios de venta, ganancias y niveles de producción rentables.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Características</h4>
+    <ul>
+      <li>Cambian según el volumen de producción.</li>
+      <li>Aumentan o disminuyen dependiendo de las ventas.</li>
+      <li>Son proporcionales a la actividad del negocio.</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Costo por Unidad ($)</h5><input type="number" id="cv_cvu" placeholder="3" step="0.01"></div>
+      <div class="campo"><h5>Cantidad Producida</h5><input type="number" id="cv_cant" placeholder="50"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularCostosVariables()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t2')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_cv"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let costoPorUnidad = 3, cantidad = 50;
+let totalCV = costoPorUnidad * cantidad;
+// Resultado: Costo Variable: $150</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Alexander Garofalo</p></footer>
+</section>
+
+<!-- ═══ T3 · DIRECTOS E INDIRECTOS ═══ -->
+<section id="t3">
+  <h2>Tema 3 · Costos Directos e Indirectos</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>La clasificación entre costos directos e indirectos ayuda a organizar mejor los gastos de producción y permite calcular correctamente el costo real de un producto o servicio.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Clasificación</h4>
+    <ul>
+      <li><strong>Directos:</strong> Identificables con un producto específico. Ej: harina, mano de obra en cocina.</li>
+      <li><strong>Indirectos:</strong> Necesarios para operar pero no asociados a un solo producto. Ej: luz, arriendo.</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Costos Directos ($)</h5><input type="number" id="ci_dir" placeholder="7" step="0.01"></div>
+      <div class="campo"><h5>Costos Indirectos ($)</h5><input type="number" id="ci_ind" placeholder="3" step="0.01"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularDirectosIndirectos()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t3')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_ci"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let harina = 2, manoDeObra = 5;
+let costoDirecto = harina + manoDeObra;
+let luz = 3, costoIndirecto = luz;
+let costoTotal = costoDirecto + costoIndirecto;
+// Resultado: Costo Total: $10</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Oscar Gomez</p></footer>
+</section>
+
+<!-- ═══ T4 · MATERIA PRIMA ═══ -->
+<section id="t4">
+  <h2>Tema 4 · Costos de Materia Prima</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>El control adecuado de la materia prima permite reducir desperdicios, mejorar la producción y obtener mayores ganancias dentro de una empresa.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Tipos</h4>
+    <ul>
+      <li><strong>Directa:</strong> ingredientes principales del producto.</li>
+      <li><strong>Indirecta:</strong> empaques, etiquetas, condimentos.</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Ingrediente 1 ($)</h5><input type="number" id="mp_i1" placeholder="2" step="0.01"></div>
+      <div class="campo"><h5>Ingrediente 2 ($)</h5><input type="number" id="mp_i2" placeholder="3" step="0.01"></div>
+      <div class="campo"><h5>Ingrediente 3 ($)</h5><input type="number" id="mp_i3" placeholder="1" step="0.01"></div>
+      <div class="campo"><h5>% Merma</h5><input type="number" id="mp_merma" placeholder="10"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularMateriaPrima()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t4')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_mp"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let harina = 2, huevos = 3, azucar = 1;
+let totalMP = harina + huevos + azucar;
+// Resultado: Costo Materia Prima: $6</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Alexander Garofalo</p></footer>
+</section>
+
+<!-- ═══ T5 · MANO DE OBRA ═══ -->
+<section id="t5">
+  <h2>Tema 5 · Mano de Obra</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>La mano de obra es fundamental para el funcionamiento de cualquier empresa, ya que influye directamente en la calidad, productividad y eficiencia del proceso productivo.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Clasificación</h4>
+    <ul>
+      <li><strong>Directa:</strong> participa directamente en la fabricación. Ej: chef, operario.</li>
+      <li><strong>Indirecta:</strong> apoya el proceso productivo. Ej: contador, guardia de seguridad.</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Horas Trabajadas</h5><input type="number" id="mo_horas" placeholder="160"></div>
+      <div class="campo"><h5>Costo por Hora ($)</h5><input type="number" id="mo_costo" placeholder="3.75" step="0.01"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularManoObra()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t5')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_mo"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let salario = 600, horasMes = 160;
+let costoPorHora = salario / horasMes;
+// Resultado: Costo/hora: $3.75</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Oscar Gomez</p></footer>
+</section>
+
+<!-- ═══ T6 · COSTEO DE RECETAS ═══ -->
+<section id="t6">
+  <h2>Tema 6 · Costeo de Recetas</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>El costeo de recetas permite calcular el costo total de los ingredientes de un alimento o bebida. Muy utilizado en restaurantes, cafeterías y negocios gastronómicos para fijar precios correctos.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Elementos del Costeo</h4>
+    <ul>
+      <li>Ingredientes y sus cantidades.</li>
+      <li>Precio unitario de cada ingrediente.</li>
+      <li>Costo total por receta.</li>
+      <li>El margen de ganancia se agrega sobre el costo total para fijar el precio de venta.</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 T6 · Costeo de Recetas</h4>
+    <div class="tabla-ingredientes">
+      <div class="fila-encabezado-tabla"><span>Ingrediente</span><span>Costo ($)</span></div>
+      <div class="fila-ingrediente"><input type="text" id="rec_n1" placeholder="Harina"><input type="number" id="rec_c1" placeholder="1.50" step="0.01"></div>
+      <div class="fila-ingrediente"><input type="text" id="rec_n2" placeholder="Huevos"><input type="number" id="rec_c2" placeholder="2.00" step="0.01"></div>
+      <div class="fila-ingrediente"><input type="text" id="rec_n3" placeholder="Azúcar"><input type="number" id="rec_c3" placeholder="1.00" step="0.01"></div>
+      <div class="fila-ingrediente"><input type="text" id="rec_n4" placeholder="Otro..."><input type="number" id="rec_c4" placeholder="0" step="0.01"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularReceta()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t6')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_rec"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let i1 = { nombre: "Harina", costo: 1.50 };
+let i2 = { nombre: "Huevos", costo: 2.00 };
+let i3 = { nombre: "Azúcar", costo: 1.00 };
+let costoTotal = i1.costo + i2.costo + i3.costo;
+// Resultado: Costo Total Receta: $4.50</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Alexander Garofalo</p></footer>
+</section>
+
+<!-- ═══ T7 · MARGEN DE GANANCIA ═══ -->
+<section id="t7">
+  <h2>Tema 7 · Margen de Ganancia</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>El margen de ganancia permite conocer la rentabilidad de los productos y ayuda a tomar decisiones estratégicas sobre precios y ventas.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Fórmula</h4>
+    <ul>
+      <li>Ganancia = Precio - Costo</li>
+      <li>% = (Ganancia / Costo) × 100</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Costo Total ($)</h5><input type="number" id="mg_costo" placeholder="10" step="0.01"></div>
+      <div class="campo"><h5>Precio de Venta ($)</h5><input type="number" id="mg_precio" placeholder="15" step="0.01"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularMargenGanancia()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t7')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_mg"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let costo = 10, precioVenta = 15;
+let ganancia = precioVenta - costo;
+let porcentaje = (ganancia / costo) * 100;
+// Resultado: Ganancia: $5  |  % Ganancia: 50%</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Oscar Gomez</p></footer>
+</section>
+
+<!-- ═══ T8 · PUNTO DE EQUILIBRIO ═══ -->
+<section id="t8">
+  <h2>Tema 8 · Punto de Equilibrio</h2>
+
+  <div class="info-card">
+    <h4>🗒️ Definición</h4>
+    <p>El punto de equilibrio permite identificar el mínimo nivel de ventas necesario para cubrir los costos de operación. Fundamental para la planificación financiera.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>📊 Fórmula</h4>
+    <ul>
+      <li>Bajo el PE → pérdida</li>
+      <li>En el PE → sin ganancia ni pérdida</li>
+      <li>Sobre el PE → ganancia</li>
+    </ul>
+  </div>
+
+  <div class="calc-box">
+    <h4>🧮 Calculadora</h4>
+    <div class="fila-form">
+      <div class="campo"><h5>Costos Fijos ($)</h5><input type="number" id="pe_cf" placeholder="1000" step="0.01"></div>
+      <div class="campo"><h5>Precio de Venta ($)</h5><input type="number" id="pe_pv" placeholder="20" step="0.01"></div>
+      <div class="campo"><h5>Costo Variable Unit. ($)</h5><input type="number" id="pe_cvu" placeholder="10" step="0.01"></div>
+    </div>
+    <div class="botonera">
+      <button onclick="calcularPuntoEquilibrio()">🧮 Calcular</button>
+      <button class="secundario" onclick="enviarAlSimulador('t8')">💾 Guardar Datos</button>
+    </div>
+    <div class="resultado" id="res_pe"></div>
+  </div>
+
+  <div class="codigo-box">
+    <div class="etiqueta">📟 JavaScript</div>
+<pre><code>let CF = 1000, PV = 20, CVU = 10;
+let PE = CF / (PV - CVU);
+// Resultado: Punto Equilibrio: 100 unidades</code></pre>
+    </div>
+  <footer class="pie-pagina"><p>Seccion creada por: Alexander Garofalo</p></footer>
+</section>
+
+<!-- ═══ SIMULADOR · SISTEMA DE COSTEO ═══ -->
+<section id="simulador">
+  <h2>Simulador · Sistema de Costeo de Recetas</h2>
+
+  <div class="info-card" style="background:#e8f5e9;border-left:4px solid #1f3c88">
+    <h4>🎯 Aplicación Práctica</h4>
+    <p><strong>Sistema de Costeo de Recetas:</strong> Los estudiantes desarrollarán un sistema que calcula automáticamente el costo real de producción considerando materia prima, mano de obra, merma, unidades de medida y costos indirectos. Las recetas usan cantidades pequeñas pero los productos se compran en otras unidades — el sistema convierte automáticamente.</p>
+  </div>
+
+  <!-- Conversor -->
+  <div class="calc-box">
+    <h4>📏 Conversor Interactivo de Unidades</h4>
+    <div class="fila-form">
+      <input type="number" id="conv_valor" value="1" oninput="actualizarConversor()" style="width:80px">
+      <select id="conv_desde" onchange="actualizarConversor()">
+        <option value="g">gramos (g)</option>
+        <option value="lb" selected>libras (lb)</option>
+        <option value="kg">kilogramos (kg)</option>
+        <option value="unidad">unidad (unid)</option>
+      </select>
+      <span style="font-weight:bold;font-size:1.2rem">=</span>
+      <span id="conv_resultado" style="font-weight:bold;font-size:1.2rem;color:#1f3c88">453.60</span>
+      <select id="conv_hacia" onchange="actualizarConversor()">
+        <option value="g" selected>gramos (g)</option>
+        <option value="lb">libras (lb)</option>
+        <option value="kg">kilogramos (kg)</option>
+        <option value="unidad">unidad (unid)</option>
+      </select>
+    </div>
+    <table id="conv_tabla">
+      <tr><td>1 libra (lb)</td><td>453.60 g</td></tr>
+      <tr><td>1 libra (lb)</td><td>1.00 lb</td></tr>
+      <tr><td>1 libra (lb)</td><td>0.454 kg</td></tr>
+      <tr><td>1 libra (lb)</td><td>454 unid</td></tr>
+    </table>
+  </div>
+
+  <!-- T0 · Descripción del Producto -->
+  <div class="sim-box" data-section="t0">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T0 · Descripción del Producto</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
       </div>
     </div>
-  </section>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Nombre del Producto</h5><input type="text" id="sim_prod_nombre" placeholder="Ej: Hamburguesa Clásica"></div>
+        <div class="campo"><h5>Descripción</h5><input type="text" id="sim_prod_desc" placeholder="Pan, carne, queso, lechuga"></div>
+        <div class="campo"><h5>Categoría</h5><input type="text" id="sim_prod_cat" placeholder="Comida Rápida"></div>
+        <div class="campo"><h5>Precio Venta Objetivo ($)</h5><input type="number" id="sim_prod_pv" placeholder="8.50" step="0.01"></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- ───── PIE DE PÁGINA ───── -->
-  <footer class="pie-pagina">
-    <p>Guía Metodológica · Costos y Presupuestos · Oscar Gomez / Alexander Garofalo</p>
-  </footer>
+  <!-- T1 · Costos Fijos -->
+  <div class="sim-box" data-section="t1">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T1 · Costos Fijos</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Alquiler ($)</h5><input type="number" id="sim_cf_alq" placeholder="800" step="0.01"></div>
+        <div class="campo"><h5>Servicios ($)</h5><input type="number" id="sim_cf_serv" placeholder="50" step="0.01"></div>
+        <div class="campo"><h5>Sueldos ($)</h5><input type="number" id="sim_cf_suel" placeholder="100" step="0.01"></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- ───── SCRIPTS ───── -->
-  <script src="cyp_utilitarios.js"></script>
-  <script src="cyp_calculadoras.js"></script>
-  <script src="cyp.js"></script>
+  <!-- T2 · Costos Variables -->
+  <div class="sim-box" data-section="t2">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T2 · Costos Variables</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Costo x Unidad ($)</h5><input type="number" id="sim_cv_cvu" placeholder="3" step="0.01"></div>
+        <div class="campo"><h5>Cantidad Producida</h5><input type="number" id="sim_cv_cant" placeholder="50"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T3 · Directos e Indirectos -->
+  <div class="sim-box" data-section="t3">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T3 · Directos e Indirectos</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Costos Directos ($)</h5><input type="number" id="sim_ci_dir" placeholder="7" step="0.01"></div>
+        <div class="campo"><h5>Costos Indirectos ($)</h5><input type="number" id="sim_ci_ind" placeholder="3" step="0.01"></div>
+        <div class="campo"><h5>% Indirectos (receta)</h5><input type="number" id="sim_indirectos" placeholder="15" step="1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T4 · Materia Prima - Inventario -->
+  <div class="sim-box" data-section="t4">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T4 · Materia Prima - Inventario</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <p style="font-size:0.85rem;color:#555;margin-bottom:8px">Costo x Unidad se calcula automáticamente con la merma.</p>
+      <div id="tabla-mp" class="tabla-sim">
+        <div class="fila-encabezado">
+          <span>Producto</span><span>U.</span><span>Cant.</span><span>Precio $</span><span>% Merma</span><span>$ x Unid</span><span>Acciones</span>
+        </div>
+      </div>
+      <div class="botonera">
+        <button onclick="abrirModalMP()">+ Agregar</button>
+        <button class="secundario" onclick="guardarInventario()">💾 Inv.</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- T5 · Mano de Obra -->
+  <div class="sim-box" data-section="t5">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T5 · Mano de Obra</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Horas Trabajadas</h5><input type="number" id="sim_mo_horas" placeholder="160"></div>
+        <div class="campo"><h5>Costo por Hora ($)</h5><input type="number" id="sim_mo_costo" placeholder="3.75" step="0.01"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T6 · Costeo de Receta -->
+  <div class="sim-box" data-section="t6">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T6 · Costeo de Receta</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Nombre</h5><input type="text" id="sim_nombre" placeholder="Ej: Hamburguesa"></div>
+        <div class="campo"><h5>Tiempo (min)</h5><input type="number" id="sim_tiempo" placeholder="45" step="1"></div>
+        <div class="campo"><h5>Porciones</h5><input type="number" id="sim_porciones" placeholder="4" step="1"></div>
+        <div class="campo"><h5>Mano de Obra x Hora ($)</h5><input type="number" id="sim_mo" placeholder="12.00" step="0.01"></div>
+      </div>
+      <div class="sim-box" style="margin-top:10px">
+        <h4 onclick="toggleCollapsible(this)" style="cursor:pointer;font-size:0.85rem">▶ Ingredientes (del inventario)</h4>
+        <div class="sim-body">
+          <div id="tabla-receta" class="tabla-sim">
+            <div class="fila-encabezado">
+              <span>Producto</span><span>Cant.</span><span>U.</span><span></span>
+            </div>
+          </div>
+          <button onclick="agregarFilaReceta()" style="margin-top:6px">+ Agregar Ingrediente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T7 · Margen de Ganancia -->
+  <div class="sim-box" data-section="t7">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T7 · Margen de Ganancia</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>% Margen Deseado</h5><input type="number" id="sim_margen" placeholder="40" step="1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T8 · Punto de Equilibrio -->
+  <div class="sim-box" data-section="t8">
+    <div class="sim-header">
+      <h4 onclick="toggleCollapsible(this)" style="cursor:pointer">▶ T8 · Punto de Equilibrio</h4>
+      <div class="sim-acciones">
+        <button onclick="guardarSim(this)" title="Guardar">💾</button>
+        <button onclick="editarSim(this)" title="Editar">✏️</button>
+        <button onclick="limpiarSim(this)" title="Borrar">🗑️</button>
+      </div>
+    </div>
+    <div class="sim-body">
+      <div class="fila-form">
+        <div class="campo"><h5>Punto de Equilibrio</h5><input type="text" id="res_pe_valor" value="-" disabled style="background:#e9ecef;font-weight:bold"></div>
+      </div>
+      <p style="font-size:0.8rem;color:#888;margin-top:4px">Se calcula con datos de T1, T6 y T7. Costos Fijos / (PV - CVU)</p>
+    </div>
+  </div>
+
+  <div class="botonera" style="justify-content:center;margin:20px 0">
+    <button onclick="guardarReceta()" class="secundario" id="btn-guardar-receta" style="padding:10px 24px">💾 Guardar Receta</button>
+    <div id="receta-selector" style="position:relative;display:inline-block">
+      <button onclick="toggleListaRecetas()" type="button" style="padding:10px 16px;font-size:0.95rem;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;min-width:220px;text-align:left;white-space:nowrap" id="btn-receta-selector">
+        📋 Seleccionar Receta
+      </button>
+      <div id="dropdown-recetas" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #ccc;border-radius:6px;max-height:240px;overflow-y:auto;z-index:20;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-top:2px;min-width:260px"></div>
+    </div>
+    <button onclick="simularCosteo()" style="padding:12px 36px;font-size:1rem">🧮 Calcular Costo Total</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard-card" id="res_sim">
+    <div class="dashboard-header">📊 Flujo de Caja - Resumen</div>
+    <div class="dashboard-monto" id="res_ganancia_real">$0.00</div>
+    <div class="dashboard-sub">Efectivo real disponible</div>
+    <div class="dashboard-filas">
+      <div class="dash-fila"><div><div class="dash-label" id="res_ingresos_label">Ingresos Reales</div><div class="dash-small">Ingresos / Mínimo (P. Equilibrio)</div></div><div class="dash-valor" id="res_ingresos_valor">$0.00 / $0.00</div></div>
+      <div class="dash-fila"><div><div class="dash-label">Egresos Reales</div><div class="dash-small">Egresos / Máximo (P. Equilibrio)</div></div><div class="dash-valor" id="res_egresos_valor">$0.00 / $0.00</div></div>
+      <div class="dash-fila"><div><div class="dash-label">Ganancia Real</div><div class="dash-small">Ganancia Neta del Periodo</div></div><div class="dash-valor" style="color:#155724;font-weight:700" id="res_ganancia_valor">$0.00</div></div>
+      <div class="dash-fila"><div><div class="dash-label">Unidades Producidas</div><div class="dash-small">Producidas / Meta (P. Equilibrio)</div></div><div class="dash-valor" id="res_unidades_valor">0 / 0</div></div>
+      <div class="dash-fila"><div><div class="dash-label">Crecimiento Total</div><div class="dash-small">Acumulado / Meta (P. Equilibrio)</div></div><div class="dash-valor" style="color:#155724;font-weight:700" id="res_crecimiento_valor">+0.0%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVALUACIÓN ═══ -->
+<section id="evaluacion">
+  <h2>Evaluación Final · Test de Conocimientos</h2>
+  <div class="info-card">
+    <p>Responde las 5 preguntas de opción múltiple. Al finalizar recibirás tu calificación con retroalimentación.</p>
+  </div>
+
+  <div class="quiz">
+
+    <div class="pregunta" data-q="1">
+      <div class="num-preg">01</div>
+      <p>Una empresa paga $500 de arriendo, $80 de internet y $120 de seguro sin importar cuánto produzca. ¿A cuánto ascienden sus costos fijos mensuales?</p>
+      <div class="opciones">
+        <label><input type="radio" name="q1" value="a"> $580</label>
+        <label><input type="radio" name="q1" value="b"> $620</label>
+        <label><input type="radio" name="q1" value="c" data-correct="true"> $700</label>
+        <label><input type="radio" name="q1" value="d"> $800</label>
+      </div>
+      <div class="explicacion" id="exp1" style="display:none">✅ Correcto: 500 + 80 + 120 = <strong>$700</strong> de costos fijos.</div>
+    </div>
+
+    <div class="pregunta" data-q="2">
+      <div class="num-preg">02</div>
+      <p>El precio de venta de un producto es $25 y su costo de producción es $10. ¿Cuál es el porcentaje de ganancia sobre el costo?</p>
+      <div class="opciones">
+        <label><input type="radio" name="q2" value="a"> 40%</label>
+        <label><input type="radio" name="q2" value="b" data-correct="true"> 150%</label>
+        <label><input type="radio" name="q2" value="c"> 60%</label>
+        <label><input type="radio" name="q2" value="d"> 250%</label>
+      </div>
+      <div class="explicacion" id="exp2" style="display:none">✅ Ganancia = $15. % Ganancia = (15/10) × 100 = <strong>150%</strong>.</div>
+    </div>
+
+    <div class="pregunta" data-q="3">
+      <div class="num-preg">03</div>
+      <p>Una pizzería tiene un costo variable por pizza de $3 y produce 50 pizzas. ¿Cuál es el costo variable total?</p>
+      <div class="opciones">
+        <label><input type="radio" name="q3" value="a"> $100</label>
+        <label><input type="radio" name="q3" value="b"> $120</label>
+        <label><input type="radio" name="q3" value="c" data-correct="true"> $150</label>
+        <label><input type="radio" name="q3" value="d"> $180</label>
+      </div>
+      <div class="explicacion" id="exp3" style="display:none">✅ Costo Variable Total = 3 × 50 = <strong>$150</strong>.</div>
+    </div>
+
+    <div class="pregunta" data-q="4">
+      <div class="num-preg">04</div>
+      <p>Un chef recibe un salario mensual de $600 y trabaja 160 horas al mes. ¿Cuál es el costo por hora de su mano de obra?</p>
+      <div class="opciones">
+        <label><input type="radio" name="q4" value="a"> $3.00</label>
+        <label><input type="radio" name="q4" value="b" data-correct="true"> $3.75</label>
+        <label><input type="radio" name="q4" value="c"> $4.00</label>
+        <label><input type="radio" name="q4" value="d"> $5.00</label>
+      </div>
+      <div class="explicacion" id="exp4" style="display:none">✅ Costo por hora = 600 / 160 = <strong>$3.75</strong>.</div>
+    </div>
+
+    <div class="pregunta" data-q="5">
+      <div class="num-preg">05</div>
+      <p>Una empresa tiene costos fijos de $2000, precio de venta $40 y costo variable unitario $20. ¿Cuántas unidades debe vender para llegar al punto de equilibrio?</p>
+      <div class="opciones">
+        <label><input type="radio" name="q5" value="a"> 50 unidades</label>
+        <label><input type="radio" name="q5" value="b"> 80 unidades</label>
+        <label><input type="radio" name="q5" value="c" data-correct="true"> 100 unidades</label>
+        <label><input type="radio" name="q5" value="d"> 200 unidades</label>
+      </div>
+      <div class="explicacion" id="exp5" style="display:none">✅ PE = 2000 / (40 - 20) = 2000 / 20 = <strong>100 unidades</strong>.</div>
+    </div>
+
+    <div class="botonera" style="justify-content:center">
+      <button onclick="evaluarQuiz()">📝 Evaluar mis respuestas</button>
+      <button class="secundario" onclick="reiniciarQuiz()">🔄 Reiniciar</button>
+    </div>
+    <div id="resultado-quiz" class="resultado" style="display:none"></div>
+  </div>
+</section>
+
+<!-- ══ ACERCA DE — AMBOS PERFILES ══ -->
+<section id="acerca-de">
+  <h2>Acerca de</h2>
+  <div class="acerca-grid">
+    <div class="tarjeta-perfil">
+      <div class="avatar-perfil">🐧</div>
+      <h3>Alexander Garofalo</h3>
+      <p class="subtitulo-perfil">/ KRAKEDEV / Matemáticas 1 /</p>
+      <p class="frase-perfil">"Me apasiona la tecnología y la informática."</p>
+      <p class="descripcion-perfil">Desarrollador de la Guía Metodológica de Costos y Presupuestos.<br>Creado con HTML, CSS y JavaScript puro.</p>
+      <div class="enlaces-perfil">
+        <a href="mailto:alexander.garofalo.ag@gmail.com">📧 alexander.garofalo.ag@gmail.com</a>
+        <a href="#">💼 Futuro Desarrollador de Software</a>
+        <a href="#">🐙 GitHub: @Norfolllk</a>
+      </div>
+    </div>
+    <div class="tarjeta-perfil">
+      <div class="avatar-perfil">🐢</div>
+      <h3>Oscar Gomez</h3>
+      <p class="subtitulo-perfil">/ KRAKEDEV / Matemáticas 1 /</p>
+      <p class="frase-perfil">"---"</p>
+      <p class="descripcion-perfil">D----.<br>----</p>
+      <div class="enlaces-perfil">
+        <a href="mailto:">--</a>
+        <a href="#">💼 Futuro ----</a>
+        <a href="#">🐙 GitHub: --</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>Guía Metodológica · Costos y Presupuestos · Oscar Gomez / Alexander Garofalo</footer>
+
+<!-- ═══ MODAL MP ═══ -->
+<div id="modal-mp" class="modal-overlay" onclick="cerrarModalMP(event)">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h3 id="modal-mp-titulo" style="margin:0">Nuevo Producto</h3>
+      <button onclick="cerrarModalMP()" style="background:transparent;color:#333;border:none;font-size:1.3rem;cursor:pointer;padding:0 6px">✕</button>
+    </div>
+    <div class="fila-form">
+      <div class="campo" style="flex:1"><h5>Producto</h5><input type="text" id="modal-mp-nombre" placeholder="Ej: Tomate"></div>
+    </div>
+    <div class="fila-form">
+      <div class="campo"><h5>Unidad</h5>
+        <select id="modal-mp-unidad">
+          <option value="lb">lb</option>
+          <option value="kg">kg</option>
+          <option value="qq">qq</option>
+          <option value="unidad">unid</option>
+        </select>
+      </div>
+      <div class="campo"><h5>Cantidad</h5><input type="number" id="modal-mp-cant" placeholder="10" step="0.01"></div>
+      <div class="campo"><h5>Precio ($)</h5><input type="number" id="modal-mp-precio" placeholder="15.00" step="0.01"></div>
+      <div class="campo"><h5>% Merma</h5><input type="number" id="modal-mp-merma" placeholder="10" step="1"></div>
+    </div>
+    <p id="modal-mp-error" style="color:#c0392b;font-size:0.85rem;display:none"></p>
+    <div class="botonera" style="justify-content:flex-end">
+      <button class="secundario" onclick="cerrarModalMP()">Cancelar</button>
+      <button onclick="guardarModalMP()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script src="cyp_utilitarios.js"></script>
+<script src="cyp_calculadoras.js"></script>
+<script src="cyp.js"></script>
 </body>
 </html>
